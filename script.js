@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     const backToTopBtn = document.getElementById('back-to-top');
-
+    
     // Elementos do Menu Mobile
     const menuToggle = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
