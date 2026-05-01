@@ -6,7 +6,6 @@ html {
     width: 100%;
 }
 
-/* RESET E FONTE NOVA: Plus Jakarta Sans */
 * {
     margin: 0;
     padding: 0;
@@ -14,25 +13,16 @@ html {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* VARIÁVEIS PREMIUM - MODO DARK (BASE) */
 :root {
     --bg-main: #0a0a0a;
-    /* Fundo escuro puro */
     --bg-darker: #020202;
-    /* Cinza ultra escuro para intercalar no dark */
     --header-bg: #000000;
-    /* Header preto sólido */
     --text-light: #ffffff;
-    /* Texto branco principal */
     --text-muted: #a0a0a0;
-    /* Texto secundário cinza */
     --border-color: rgba(255, 255, 255, 0.08);
-    /* Bordas sutis no escuro */
 }
 
-/* =======================================================
-   SCROLLBAR CUSTOMIZADA COM THUMB BRANCO
-======================================================== */
+/* SCROLLBAR CUSTOMIZADA (Branca) */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -43,15 +33,12 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: #ffffff;
-    /* Thumb branco para combinar com o tema */
     border-radius: 10px;
     border: 3px solid #111111;
-    /* Borda da cor do track para dar o efeito "flutuante" */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #e0e0e0;
-    /* Fica um pouquinho cinza ao passar o mouse */
 }
 
 body {
@@ -60,7 +47,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ANIMAÇÕES */
 @keyframes typing {
     to {
         width: 100%;
@@ -73,7 +59,6 @@ body {
     }
 }
 
-/* Animação Pulse para botões brancos no fundo escuro */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
@@ -102,9 +87,6 @@ body {
     background-color: var(--bg-darker);
 }
 
-/* =======================================================
-   CLASSE SEÇÃO CLARA (Clínica e Especialistas)
-======================================================== */
 .section-light {
     background-color: #ffffff;
     color: #111111;
@@ -133,14 +115,14 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     color: var(--text-light);
-}
-
-.text-center {
     text-align: center;
-    margin-bottom: 3rem;
 }
 
-/* HEADER E MENU - MODO DARK */
+.section-light .section-title {
+    text-align: left;
+}
+
+/* HEADER E MENU */
 .header {
     width: 100%;
     height: 5rem;
@@ -161,13 +143,11 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* MÁQUINA DE ESCREVER */
 .typing-effect {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid var(--text-light);
-    /* Cursor branco */
     width: 0;
     font-size: 1.6rem;
     font-weight: 700;
@@ -182,11 +162,13 @@ body {
     color: var(--text-muted);
 }
 
+/* MENU DESKTOP */
 .nav {
     display: flex;
     gap: 2.5rem;
     flex: 1;
     justify-content: center;
+    align-items: center;
 }
 
 .nav a {
@@ -213,6 +195,29 @@ body {
     width: 100%;
 }
 
+.mobile-only-btn {
+    display: none;
+}
+
+/* Esconde o botão do menu no desktop */
+
+/* HAMBURGER ICON */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
 .btn-outline {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -222,6 +227,7 @@ body {
     font-size: 0.95rem;
     font-weight: 700;
     transition: 0.3s;
+    text-align: center;
 }
 
 .btn-outline:hover {
@@ -230,7 +236,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* HERO SECTION - MAIS IMPACTO */
+/* HERO SECTION */
 .hero {
     width: 100%;
     height: 100vh;
@@ -250,25 +256,24 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 4.8rem);
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
     line-height: 1.1;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     color: var(--text-muted);
     margin-bottom: 3.5rem;
     max-width: 35rem;
 }
 
-/* BOTÃO PRINCIPAL (CTA) */
 .btn-solid {
     display: inline-flex;
     align-items: center;
-    padding: 1.4rem 3.5rem;
+    padding: 1.2rem 3rem;
     background-color: var(--text-light);
     color: var(--header-bg);
     text-decoration: none;
@@ -316,12 +321,11 @@ body {
     transition: transform 0.4s ease-out;
 }
 
-/* Hover imagens */
 .split-layout:hover .image-content img {
     transform: scale(1.03);
 }
 
-/* CARDS TRATAMENTOS (DARK) */
+/* CARDS TRATAMENTOS */
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -352,7 +356,7 @@ body {
     font-size: 1rem;
 }
 
-/* CONTATO (DARK) */
+/* CONTATO */
 .contact-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -413,7 +417,6 @@ body {
     transform: translateX(0);
 }
 
-/* MAPA NO TEMA ESCURO COM EFEITO DE COR NO HOVER */
 .contact-map {
     flex: 1.5;
     min-height: 350px;
@@ -448,7 +451,7 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* BOTÕES FLUTUANTES - BRANCOS NO FUNDO ESCURO */
+/* BOTÕES FLUTUANTES */
 .floating-buttons {
     position: fixed;
     bottom: 2rem;
@@ -472,7 +475,6 @@ footer p {
     text-decoration: none;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s;
     color: var(--bg-main);
-    /* Cor do SVG (Preto/Dark) */
 }
 
 .social-btn {
@@ -504,11 +506,62 @@ footer p {
     background-color: #555555;
 }
 
+
+/* =======================================================
+   RESPONSIVIDADE PREMIUM (MOBILE E TABLETS)
+======================================================== */
 @media (max-width: 992px) {
-    .nav {
+
+    /* Ativa o Menu Hambúrguer e esconde botão desktop */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .desktop-btn {
         display: none;
     }
 
+    .mobile-only-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    /* Menu Mobile Deslizante */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 1.5rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        /* Esconde o menu cortando ele */
+        transition: clip-path 0.4s ease-in-out;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Classe ativada via JS para mostrar o menu */
+    .nav.is-active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Animação do ícone Hambúrguer para um X */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Ajustes Gerais de Layout para telas menores */
     .split-layout,
     .split-layout.reverse {
         flex-direction: column;
@@ -526,5 +579,44 @@ footer p {
 
     .hero p {
         max-width: 100%;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    /* Centraliza títulos no mobile */
+    .section-light .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Diminui os paddings para a tela respirar melhor */
+    .section-padding {
+        padding: 4rem 5%;
+    }
+
+    /* Diminui a fonte da Logo para caber com o menu */
+    .typing-effect {
+        font-size: 1.3rem;
+    }
+
+    /* Botões flutuantes um pouco menores para não tampar a tela */
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .float-btn svg {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    /* Botão Agendar no Mobile com largura total */
+    .btn-solid {
+        width: 100%;
+        justify-content: center;
     }
 }
