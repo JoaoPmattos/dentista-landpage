@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO BÁSICO -->
-    <title>Landpage - Dentista</title>
+    <title>Dr. Odonto | Especialista em Sorrisos em Araraquara e Região</title>
     <meta name="description"
         content="Clínica Odontológica de excelência. Dentista especialista em estética, lentes de contato, implantes e reabilitação oral em Araraquara e São Carlos.">
     <meta name="keywords"
         content="dentista, Araraquara, São Carlos, clínica odontológica, odontologia estética, reabilitação oral, implantes, lentes de porcelana, dentista em araraquara">
 
-    <!-- NOVA FONTE: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
@@ -23,24 +22,34 @@
 
 <body>
 
-    <!-- HEADER FIXO (DARK) -->
+    <!-- HEADER FIXO -->
     <header class="header" id="main-header">
         <div class="logo">
             <div class="typing-effect">ODONTO <span>CLINIC</span></div>
         </div>
 
-        <nav class="nav">
+        <!-- Ícone do Menu Mobile (Hambúrguer) -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav" id="nav-menu">
             <a href="#home">Home</a>
             <a href="#clinica">A Clínica</a>
             <a href="#tratamentos">Tratamentos</a>
             <a href="#especialistas">Especialistas</a>
             <a href="#contato">Contato</a>
+            <!-- Botão extra que só aparece dentro do menu no celular -->
+            <a href="#contato" class="btn-outline mobile-only-btn">Falar com Dentista →</a>
         </nav>
 
-        <a href="#contato" class="btn-outline">Falar com Dentista →</a>
+        <!-- Botão que aparece apenas no Desktop -->
+        <a href="#contato" class="btn-outline desktop-btn">Falar com Dentista →</a>
     </header>
 
-    <!-- HERO SECTION (DARK) -->
+    <!-- HERO SECTION -->
     <main id="home" class="hero">
         <div class="hero-content">
             <h1>Odontologia de precisão e estética avançada.</h1>
@@ -53,7 +62,7 @@
         </div>
     </main>
 
-    <!-- SEÇÃO: A CLÍNICA (LIGHT / BRANCA) -->
+    <!-- SEÇÃO: A CLÍNICA -->
     <section id="clinica" class="section-padding section-light">
         <div class="container split-layout">
             <div class="text-content">
@@ -71,7 +80,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: TRATAMENTOS (DARK) -->
+    <!-- SEÇÃO: TRATAMENTOS -->
     <section id="tratamentos" class="section-padding bg-darker">
         <div class="container">
             <h2 class="section-title text-center">Nossas Especialidades</h2>
@@ -95,7 +104,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: ESPECIALISTAS (LIGHT / BRANCA) -->
+    <!-- SEÇÃO: ESPECIALISTAS -->
     <section id="especialistas" class="section-padding section-light">
         <div class="container split-layout reverse">
             <div class="text-content">
@@ -113,7 +122,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: CONTATO (DARK) -->
+    <!-- SEÇÃO: CONTATO -->
     <section id="contato" class="section-padding bg-darker">
         <div class="container">
             <div class="contact-header">
@@ -123,7 +132,6 @@
 
             <div class="contact-layout">
                 <div class="contact-info">
-                    <!-- EMAIL -->
                     <a href="mailto:contato@odonto.com.br" class="contact-link">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                             <path
@@ -132,7 +140,6 @@
                         <span class="link-text">contato@odonto.com.br</span>
                     </a>
 
-                    <!-- TELEFONE -->
                     <p style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem;">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                             <path
@@ -141,7 +148,6 @@
                         (11) 3422-8041
                     </p>
 
-                    <!-- WHATSAPP -->
                     <a href="https://wa.me/seunumeroaqui" target="_blank" class="contact-link" style="color: #25D366;">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="#25D366">
                             <path
@@ -152,7 +158,6 @@
 
                     <div style="margin-top: 1.5rem;"></div>
 
-                    <!-- LOCALIZAÇÃO -->
                     <p style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem;">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="#e53935">
                             <path
@@ -178,7 +183,6 @@
         </div>
     </section>
 
-    <!-- FOOTER (DARK) -->
     <footer>
         <p>Odonto Clinic © 2026. Todos os direitos reservados.</p>
     </footer>
