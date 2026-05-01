@@ -13,6 +13,7 @@ html {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* VARIÁVEIS PREMIUM - MODO DARK (BASE) */
 :root {
     --bg-main: #0a0a0a;
     --bg-darker: #020202;
@@ -87,6 +88,9 @@ body {
     background-color: var(--bg-darker);
 }
 
+/* =======================================================
+   CLASSE SEÇÃO CLARA (Clínica e Especialistas)
+======================================================== */
 .section-light {
     background-color: #ffffff;
     color: #111111;
@@ -122,7 +126,7 @@ body {
     text-align: left;
 }
 
-/* HEADER E MENU */
+/* HEADER */
 .header {
     width: 100%;
     height: 5rem;
@@ -143,6 +147,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* MÁQUINA DE ESCREVER */
 .typing-effect {
     display: inline-block;
     overflow: hidden;
@@ -180,7 +185,8 @@ body {
     transition: 0.3s;
 }
 
-.nav a::after {
+/* Efeito Hover do Menu (Garante que botões não ganhem linha) */
+.nav a:not(.btn-outline)::after {
     content: '';
     position: absolute;
     width: 0;
@@ -191,15 +197,18 @@ body {
     transition: 0.3s;
 }
 
-.nav a:hover::after {
+.nav a:not(.btn-outline):hover::after {
     width: 100%;
 }
 
+/* Oculta botão mobile no Desktop */
 .mobile-only-btn {
-    display: none;
+    display: none !important;
 }
 
-/* Esconde o botão do menu no desktop */
+.desktop-btn {
+    display: inline-block;
+}
 
 /* HAMBURGER ICON */
 .menu-toggle {
@@ -512,19 +521,21 @@ footer p {
 ======================================================== */
 @media (max-width: 992px) {
 
-    /* Ativa o Menu Hambúrguer e esconde botão desktop */
+    /* Ativa o Menu Hambúrguer */
     .menu-toggle {
         display: flex;
     }
 
+    /* Esconde botão do header no desktop, mostra no menu mobile */
     .desktop-btn {
-        display: none;
+        display: none !important;
     }
 
     .mobile-only-btn {
-        display: inline-block;
-        margin-top: 1rem;
+        display: inline-block !important;
+        margin-top: 1.5rem;
         width: 100%;
+        text-align: center;
     }
 
     /* Menu Mobile Deslizante */
@@ -538,17 +549,14 @@ footer p {
         padding: 2rem 5%;
         gap: 1.5rem;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        /* Esconde o menu cortando ele */
         transition: clip-path 0.4s ease-in-out;
         border-bottom: 1px solid var(--border-color);
     }
 
-    /* Classe ativada via JS para mostrar o menu */
     .nav.is-active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
-    /* Animação do ícone Hambúrguer para um X */
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
@@ -561,7 +569,6 @@ footer p {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* Ajustes Gerais de Layout para telas menores */
     .split-layout,
     .split-layout.reverse {
         flex-direction: column;
@@ -585,25 +592,20 @@ footer p {
         text-align: center;
     }
 
-    /* Centraliza títulos no mobile */
     .section-light .section-title {
         text-align: center;
     }
 }
 
 @media (max-width: 768px) {
-
-    /* Diminui os paddings para a tela respirar melhor */
     .section-padding {
         padding: 4rem 5%;
     }
 
-    /* Diminui a fonte da Logo para caber com o menu */
     .typing-effect {
         font-size: 1.3rem;
     }
 
-    /* Botões flutuantes um pouco menores para não tampar a tela */
     .float-btn {
         width: 50px;
         height: 50px;
@@ -614,9 +616,9 @@ footer p {
         height: 1.4rem;
     }
 
-    /* Botão Agendar no Mobile com largura total */
     .btn-solid {
         width: 100%;
         justify-content: center;
     }
+
 }
