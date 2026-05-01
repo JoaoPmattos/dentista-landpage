@@ -1,0 +1,530 @@
+/* CONFIGURAÇÃO DE SCROLL SUAVE */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* RESET E FONTE NOVA: Plus Jakarta Sans */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* VARIÁVEIS PREMIUM - MODO DARK (BASE) */
+:root {
+    --bg-main: #0a0a0a;
+    /* Fundo escuro puro */
+    --bg-darker: #020202;
+    /* Cinza ultra escuro para intercalar no dark */
+    --header-bg: #000000;
+    /* Header preto sólido */
+    --text-light: #ffffff;
+    /* Texto branco principal */
+    --text-muted: #a0a0a0;
+    /* Texto secundário cinza */
+    --border-color: rgba(255, 255, 255, 0.08);
+    /* Bordas sutis no escuro */
+}
+
+/* =======================================================
+   SCROLLBAR CUSTOMIZADA COM THUMB BRANCO
+======================================================== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    /* Thumb branco para combinar com o tema */
+    border-radius: 10px;
+    border: 3px solid #111111;
+    /* Borda da cor do track para dar o efeito "flutuante" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e0e0e0;
+    /* Fica um pouquinho cinza ao passar o mouse */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* ANIMAÇÕES */
+@keyframes typing {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Animação Pulse para botões brancos no fundo escuro */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 6rem 5%;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+/* =======================================================
+   CLASSE SEÇÃO CLARA (Clínica e Especialistas)
+======================================================== */
+.section-light {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.section-light .section-title {
+    color: #000000;
+}
+
+.section-light p {
+    color: #444444;
+}
+
+.section-light .image-content {
+    border-color: #eeeeee;
+}
+
+.section-light .split-layout:hover .image-content {
+    border-color: #cccccc;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--text-light);
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* HEADER E MENU - MODO DARK */
+.header {
+    width: 100%;
+    height: 5rem;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header.scrolled {
+    height: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* MÁQUINA DE ESCREVER */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--text-light);
+    /* Cursor branco */
+    width: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    animation: typing 2.5s steps(20, end) forwards, blink 0.8s step-end infinite;
+}
+
+.typing-effect span {
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.nav {
+    display: flex;
+    gap: 2.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background: var(--text-light);
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--text-light);
+    color: var(--header-bg);
+    transform: translateY(-3px);
+}
+
+/* HERO SECTION - MAIS IMPACTO */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.4) 100%),
+        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+    color: var(--text-light);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 50rem;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 3.5rem;
+    max-width: 35rem;
+}
+
+/* BOTÃO PRINCIPAL (CTA) */
+.btn-solid {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.4rem 3.5rem;
+    background-color: var(--text-light);
+    color: var(--header-bg);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-solid:hover {
+    background-color: #e5e5e5;
+    transform: translateY(-3px);
+}
+
+/* LAYOUTS */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-layout .text-content {
+    flex: 1;
+}
+
+.split-layout .text-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.split-layout .image-content {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: border-color 0.4s;
+}
+
+.split-layout .image-content img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease-out;
+}
+
+/* Hover imagens */
+.split-layout:hover .image-content img {
+    transform: scale(1.03);
+}
+
+/* CARDS TRATAMENTOS (DARK) */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-main);
+    padding: 3rem 2rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+    border-color: var(--text-light);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* CONTATO (DARK) */
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 3rem;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.05rem;
+    width: fit-content;
+}
+
+.link-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.link-text::after {
+    content: '→';
+    position: absolute;
+    right: -25px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover .link-text {
+    filter: opacity(0.7);
+}
+
+.contact-link:hover .link-text::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* MAPA NO TEMA ESCURO COM EFEITO DE COR NO HOVER */
+.contact-map {
+    flex: 1.5;
+    min-height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: grayscale(100%) invert(90%);
+    transition: transform 0.4s ease, border-color 0.4s ease, filter 0.4s;
+    border: 1px solid var(--border-color);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-map:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    filter: grayscale(40%) invert(90%);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    border-top: 1px solid var(--header-bg);
+    background-color: var(--header-bg);
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* BOTÕES FLUTUANTES - BRANCOS NO FUNDO ESCURO */
+.floating-buttons {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s;
+    color: var(--bg-main);
+    /* Cor do SVG (Preto/Dark) */
+}
+
+.social-btn {
+    animation: pulse 2s infinite;
+}
+
+.float-btn:hover {
+    transform: scale(1.2) translateY(-5px);
+    background-color: #e0e0e0;
+    animation-play-state: paused;
+}
+
+.back-top-btn {
+    background-color: #333333;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+    transition: all 0.4s ease;
+}
+
+.back-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-top-btn:hover {
+    background-color: #555555;
+}
+
+@media (max-width: 992px) {
+    .nav {
+        display: none;
+    }
+
+    .split-layout,
+    .split-layout.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-layout {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .hero p {
+        max-width: 100%;
+    }
+}
